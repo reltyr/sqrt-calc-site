@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karekök Hesaplama Sitesi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link id="favicon" rel="icon" href="assets/icons/site_icon1.png" type="image/png">
+    <script id="MathJax-script" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- <button id="menuButton" class="menu-button">☰</button>
+    <div class="sidebar" id="sidebar">
+        <button id="closeButton" class="close-button">×</button>
+        <div class="sidebar-content">
+            <h2>Sidebar Menu</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div> -->
+    <div id="particles-js"></div>
+    <header class="header">
+        <h1>Karekök Hesaplayıcı</h1>
+        <div class="language-selector">
+            <select id="languageSelect">
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="en">🇬🇧 English</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tabs">
+        <button class="tab-button active" onclick="showTabs('wholeNumbersTab')">Tam Sayılar</button>
+        <button class="tab-button" onclick="showTabs('fractionsTab')">Kesirler & Ondalıklar</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Whole Numbers Tab -->
+        <div class="container" id="wholeNumbersTab">
+            <h2 id="result"></h2>
+            <input type="text" id="inputNumber" placeholder="Bir sayı girin" maxlength="10">
+            <button onclick="calculateSquareRoot()">Karekök Hesapla</button>
+            <div id="errorMessage" class="error" data-translation-key="errorMessage.wholeNumbers"></div>
+            <h3 id="calculationSteps" style="display: none;">İşlem Adımları:</h3>
+            <ul id="stepsList"></ul>
+        </div>
+
+        <!-- Fractions Tab -->
+        <div class="container hidden" id="fractionsTab">
+            <h2 id="fractionResult"></h2>
+            <input type="text" id="fractionInput" placeholder="Örn: 25/100 veya 0.25" maxlength="10">
+            <button onclick="calculateFractionSquareRoot()">Karekök Hesapla</button>
+            <div id="fractionErrorMessage" class="error" data-translation-key="errorMessage.fractions"></div>
+            <h3 id="fractionSteps" style="display: none;">İşlem Adımları:</h3>
+            <ul id="fractionStepsList"></ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2077 | Made by relty 👌<!--<a href="https://github.com/reltyr" target="_blank" rel="noopener noreferrer">relty</a>--></p>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+      particlesJS.load('particles-js', './assets/particles.json', function() {
+        console.log('particles.js loaded');
+      });
+    </script>
+</body>
+</html>
